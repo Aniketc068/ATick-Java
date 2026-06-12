@@ -1,0 +1,6 @@
+# Keep GitHub's language statistics focused on the Java library.
+docs/**      linguist-documentation
+run.sh       linguist-vendored
+run.bat      linguist-vendored
+*.dll        binary
+examples/signed/**  linguist-generated

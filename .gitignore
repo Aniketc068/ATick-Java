@@ -1,0 +1,20 @@
+# Build output
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# local-only JNA jar (Maven pulls JNA from Central; the bundled engine loads it)
+/jna.jar
+
+# documentation build output
+/docs/_build/
+
+# CI workflow lives only in the private build repo
+/.github/
+
+# scratch
+*.bak
