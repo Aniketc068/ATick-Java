@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Runnable examples that use ATick purely as a Maven dependency (no source, no manual jar).
+     Run one:   mvn -q compile exec:java -Dexec.mainClass=SignPfx
+     (mainClass: SignPfx, PadesLevels, Appearance, MarkColor, HashAlgorithms, Invisible,
+      TickVariations, DeferredEsign). Each writes its signed PDF into ./signed/. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.aniketc068</groupId>
+  <artifactId>atick-examples</artifactId>
+  <version>1.0.3</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <!-- the only dependency a user adds; ATick brings JNA + the native engine for every platform -->
+    <dependency>
+      <groupId>io.github.aniketc068</groupId>
+      <artifactId>atick</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
